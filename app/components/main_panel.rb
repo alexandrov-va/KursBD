@@ -32,11 +32,15 @@ class MainPanel < Netzke::Basepack::Viewport
 
   component :main_tab do |c|
     c.klass = MainTab
-    c.flex = 5
+    c.flex = 8
   end
 
   component :window_one do |c|
     c.klass = WindowOne
+  end
+
+  component :window_two do |c|
+    c.klass = WindowTwo
   end
 
   def leaf(text, component, icon = nil)
@@ -51,7 +55,10 @@ class MainPanel < Netzke::Basepack::Viewport
     {
       :text => "Windows",
       :expanded => true,
-      :children => [leaf("Number One", :window_one)]
+      :children => [
+        leaf("Shipped Groups", :window_one),
+        leaf("Departing soon Groups", :window_two)
+      ]
     }
   end
 end
@@ -60,12 +67,16 @@ class MainTab < Netzke::Basepack::TabPanel
 
   def configure(c)
     super
-    c.items = [:clients_desired_routes, :groups_clients, :routes, :employees]
+    c.items = [:clients_desired_routes, :desired_routes, :groups_clients, :routes, :employees]
   end
 
   component :clients_desired_routes do |c|
     c.klass = ClientsDesiredRoutes
     c.title = "Clients and DesiredRoutes"
+  end
+
+  component :desired_routes do |c|
+    c.klass = DesiredRoutes
   end
 
   component :groups_clients do |c|

@@ -32,6 +32,7 @@ class GroupsClients < Netzke::Basepack::Form
   end
 
   endpoint :server_set_group do |params, this|
+    p "NONONONO"
     component_session[:current_group_id] = params[:group_id]
   end
 end

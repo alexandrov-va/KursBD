@@ -1,5 +1,4 @@
-class WindowOne < Netzke::Basepack::Window
-
+class WindowTwo < Netzke::Basepack::Window
   def configure(c)
     super
     c.persistence = true
@@ -10,6 +9,6 @@ class WindowOne < Netzke::Basepack::Window
   end
 
   component :groups do |c|
-    c.scope = ->(rel){ rel.where("NOW() > travel_date") }
+    c.scope = ->(rel){ rel.where("NOW() < travel_date") }
   end
 end
