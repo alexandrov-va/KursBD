@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028171940) do
+ActiveRecord::Schema.define(version: 20151028171941) do
 
   create_table "clients", force: :cascade do |t|
     t.string  "lastname",    limit: 255
@@ -34,9 +34,10 @@ ActiveRecord::Schema.define(version: 20151028171940) do
   add_index "desired_routes", ["route_id"], name: "fk_rails_b591131094", using: :btree
 
   create_table "employees", force: :cascade do |t|
-    t.string "lastname",   limit: 255
-    t.string "firstname",  limit: 255
-    t.string "patronymic", limit: 255
+    t.string  "lastname",   limit: 255
+    t.string  "firstname",  limit: 255
+    t.string  "patronymic", limit: 255
+    t.boolean "vacant",                 default: true
   end
 
   create_table "groups", force: :cascade do |t|

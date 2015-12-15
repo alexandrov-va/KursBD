@@ -14,6 +14,12 @@ class Clients < Netzke::Basepack::Grid
     c.model = "Client"
     c.enable_pagination = false
     c.bbar = [:add, :del, :edit, :apply, :search, :clear_groups]
+    c.columns = [
+      {name: :fullname, getter: ->(r){[r.lastname, r.firstname, r.patronymic].join(' ')},
+      setter: ->(r,v){r.lastname, r.firstname, r.patronymic = v.split(" ")}, flex: 2},
+      {name: :passport, flex: 2}, {name: :address, flex: 2},
+      {name: :phonenumber, flex: 2}, {name: :group_id, flex: 1}
+    ]
   end
 
   action :clear_groups

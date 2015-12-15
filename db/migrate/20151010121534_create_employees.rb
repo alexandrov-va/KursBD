@@ -6,6 +6,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :lastname
       t.string :firstname
       t.string :patronymic
+      t.boolean :vacant, default: true
 
       #t.timestamps null: false
     end

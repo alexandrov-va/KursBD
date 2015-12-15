@@ -33,6 +33,9 @@ class Routes < Netzke::Basepack::Grid
     c.model = "Route"
     c.enable_pagination = false
     c.bbar = [:add, :del, :edit, :apply, :form_group, :search]
+    c.columns = [
+      {name: :country, flex: 1}, {name: :duration, flex: 1}, {name: :cost, flex: 1}
+    ]
   end
 
   action :form_group
