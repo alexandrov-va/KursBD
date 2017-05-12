@@ -1,4 +1,4 @@
 == Tour Operator Table Editor
 Framework: Ruby on Rails
 
-Netzke gem is using here for ExtJS front-end.
+Netzke gem is used for RoR<->ExtJS linkage, giving good UI for table editing.
